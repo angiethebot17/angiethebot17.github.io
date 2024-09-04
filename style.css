@@ -2,7 +2,8 @@ body {
     background: rgb(179, 92, 163);
     color: rgb(96, 34, 80);
     padding: 10px;
-    font-family: arial;
+    font-family: fantasy;
+    font-weight: bold;
 }
 #all-contents {
   max-width: 800px;
