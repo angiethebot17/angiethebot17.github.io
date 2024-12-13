@@ -1,6 +1,6 @@
 body {
     background: rgb(179, 92, 163);
-    color: rgb(96, 34, 80);
+    color: rgb(114, 26, 95);
     padding: 10px;
     font-family: fantasy;
     font-weight: bold;
@@ -11,7 +11,7 @@ body {
 }
 
 /* navigation menu */
-nav {border-radius: 10px 100px / 120px;
+nav {border-radius: 30px 30px / 30px;
     background: rgb(165, 58, 135);
    margin: 0 auto;
    margin-bottom: 20px;
@@ -34,7 +34,7 @@ h1 {
 }
 a {
     text-decoration: none;
-    color: #fc98fc;
+    color: #110111c3;
 }
 
 /* main container area beneath menu */
@@ -75,7 +75,7 @@ h2, h3 {
 #portfolio li {
     background: #fff;
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 30px;
     margin-bottom: 10px;
 }
 
@@ -135,4 +135,29 @@ h2, h3 {
       align-content: center;
       justify-content: center;
     }
+}
+/* portfolio styles */
+.content h1 {
+  color: rgb(219, 58, 157);
+}
+
+#portfolio {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+#portfolio li {
+  background: #f19cd7;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+#portfolio li:hover {
+  background: #eee;
+}
+
+#portfolio a {
+  text-decoration: none;
+  color: #454545;
 }

@@ -20,14 +20,24 @@ var init = function (window) {
         ////////////////////////////////////////////////////////////
         
         // TODO 1 : Declare and initialize our variables
-
-
-        // TODO 2 : Create a function that draws a circle 
+        var circle; //variable to hold a single circle when creating circles / iteracting 
+        var circles = []; //variable to store all circle in one Array
         
+        // TODO 2 : Create a function that draws a circle 
+        function drawCircle() {
+            circle = draw.randomCircleInArea(canvas, true, true, "#999", 2);
+            physikz.addRandomVelocity(circle, canvas, 10, 10);
+            view.addChild(circle);
+            circles.push(circle); 
+        }
+
 
         // TODO 3 / 7 : Call the drawCircle() function 
-
-
+        for (var count = 0; count < 100; count++) {
+            drawCircle();
+          }
+        
+   
         ////////////////////////////////////////////////////////////
         ///////////////// PROGRAM LOGIC ////////////////////////////
         ////////////////////////////////////////////////////////////
@@ -38,18 +48,19 @@ var init = function (window) {
         and check to see if it has drifted off the screen.         
         */
         function update() {
-            // TODO 4 : Update the circle's position //
 
-            
-            // TODO 5 / 10 : Call game.checkCirclePosition() on your circles.
-           
-
+            // TODO 4 : Update the circle's position // 
             // TODO 9 : Iterate over the array
-           
+            for (var i = 0; i < circles.length; i++) {
+                // code to repeat using i
+                physikz.updatePosition(circles[i]);
+                // TODO 5 / 10 : Call game.checkCirclePosition() on your circles.
+                game.checkCirclePosition(circles[i]);
+              }           
             
         }
     
-        /* 
+        /* TODO 4 AND TODO 5 were deleted because I created loops 
         This Function should check the position of a circle that is passed to the 
         Function. If that circle drifts off the screen, this Function should move
         it to the opposite side of the screen.
@@ -60,6 +71,21 @@ var init = function (window) {
             if ( circle.x > canvas.width ) {
                 circle.x = 0;
             }
+
+            // bottom
+            if ( circle.y > canvas.height ) {
+                circle.y = 0;
+            }
+
+            // left
+            if ( circle.x < 0 ) {
+                circle.x = canvas.width; 
+            }
+            
+            // top
+            if ( circle.y < 0 ){
+                circle.y = canvas.height;
+            }            
             
             // TODO 6 : YOUR CODE STARTS HERE //////////////////////
             
